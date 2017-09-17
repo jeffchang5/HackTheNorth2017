@@ -17,6 +17,18 @@ import org.mhacks.android.R
  * Created by jeffreychang on 9/13/17.
  */
 abstract class BaseActivity: AppCompatActivity() {
+
+
+    fun addPadding() {
+        val height: Int = ResourceUtil.convertDpResToPixel(context = this,
+                res = R.dimen.toolbar_height)
+        fragment_container.setPadding(0, height, 0, 0)
+    }
+
+    fun removePadding() {
+        fragment_container.setPadding(0, 0, 0, 0)
+    }
+
     fun setStatusBarTransparent() {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
@@ -69,20 +81,5 @@ abstract class BaseActivity: AppCompatActivity() {
 
         navigation?.itemIconTintList = colorStateList
         navigation?.itemTextColor = colorStateList
-    }
-
-    /**
-     * Updates the main_fragment_container with the given fragment.
-     * @param startfragment fragment to replace the main container with
-     */
-
-     fun addPadding() {
-        val height: Int = ResourceUtil.convertDpResToPixel(context = this,
-                res = R.dimen.toolbar_height)
-        fragment_container.setPadding(0, height, 0, 0)
-    }
-
-     fun removePadding() {
-        fragment_container.setPadding(0, 0, 0, 0)
     }
 }

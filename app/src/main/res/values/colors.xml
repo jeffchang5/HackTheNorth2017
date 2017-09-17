@@ -17,6 +17,7 @@
     <color name="colorAccent">#F4A4A8</color>
 
 
-    <!--Map Fragment-->
+    <!--Uber Card -->
     <color name="semiColorPrimary">#9643384D</color>
+    <color name="material_card_background">#FAFAFA</color>
 </resources>

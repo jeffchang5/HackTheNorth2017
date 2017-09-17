@@ -31,8 +31,7 @@ abstract class BaseFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         changeColors()
-        val view = inflater!!.inflate(LayoutResourceID, container, false)
-        return view
+        return inflater!!.inflate(LayoutResourceID, container, false)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {

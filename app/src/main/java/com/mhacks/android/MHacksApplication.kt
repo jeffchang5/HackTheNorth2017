@@ -9,17 +9,17 @@ import com.mhacks.android.dagger.component.*
 import com.mhacks.android.dagger.module.AppModule
 import com.mhacks.android.dagger.module.AuthModule
 import com.mhacks.android.dagger.module.RetrofitModule
-import com.mhacks.android.ui.MainActivity
 import timber.log.Timber
+import com.uber.sdk.android.core.UberSdk
+import com.uber.sdk.core.auth.Scope
+import com.uber.sdk.rides.client.SessionConfiguration
+import java.util.*
 
 
-
-
-
-class MHacksApplication : Application(), MainActivity.OnFromMainActivityCallback {
+class MHacksApplication : Application(){
 
     private lateinit var netComponent: NetComponent
-    lateinit override var hackathonComponent: HackathonComponent
+    lateinit var hackathonComponent: HackathonComponent
 
     override fun onCreate() {
         super.onCreate()
@@ -39,7 +39,15 @@ class MHacksApplication : Application(), MainActivity.OnFromMainActivityCallback
 
     }
 
-    override fun setAuthInterceptorToken(token: String) {
-        netComponent.authInterceptor.token = token
+    fun setUberSDKConfig() {
+        val config = SessionConfiguration.Builder()
+                .setClientId("YOUR_CLIENT_ID") //This is necessary
+                .setRedirectUri("YOUR_REDIRECT_URI") //This is necessary if you'll be using implicit grant
+                .setEnvironment(SessionConfiguration.Environment.SANDBOX) //Useful for testing your app in the sandbox environment
+                .setScopes(Arrays.asList(Scope.PROFILE, Scope.RIDE_WIDGETS)) //Your scopes for authentication here
+                .build()
+
+//This is a convenience method and will set the default config to be used in other components without passing it directly.
+        UberSdk.initialize(config)
     }
 }
