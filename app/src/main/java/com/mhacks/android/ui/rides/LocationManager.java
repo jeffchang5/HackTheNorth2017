@@ -1,10 +1,8 @@
-package com.mhacks.android.ui.map;
+package com.mhacks.android.ui.rides;
 
 import com.mhacks.android.data.model.Location;
-import com.mhacks.android.data.network.HackathonCallback;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Omkar Moghe on 10/7/2016.

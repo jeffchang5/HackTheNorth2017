@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.mhacks.android.data.model.Event;
 import com.mhacks.android.data.model.Location;
-import com.mhacks.android.ui.map.LocationManager;
+import com.mhacks.android.ui.rides.LocationManager;
 
 import org.mhacks.android.R;
 

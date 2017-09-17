@@ -10,7 +10,7 @@ import com.mhacks.android.data.room.MHacksDatabase
 import com.mhacks.android.ui.common.BaseActivity
 import com.mhacks.android.ui.common.BaseFragment
 import com.mhacks.android.ui.common.NavigationColor
-import com.mhacks.android.ui.map.MapViewFragment
+import com.mhacks.android.ui.rides.RideFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import org.mhacks.android.R
 import javax.inject.Inject
@@ -52,15 +52,15 @@ class MainActivity : BaseActivity(),
         setBottomNavigationColor(
                 NavigationColor(R.color.colorPrimary, R.color.colorPrimaryDark))
 
-        updateFragment(MapViewFragment.instance)
+        updateFragment(RideFragment.instance)
 
         navigation?.setOnNavigationItemSelectedListener({ item ->
             when (item.itemId) {
                 R.id.navigation_home -> {
-                    updateFragment(MapViewFragment.instance)
+                    updateFragment(RideFragment.instance)
                 }
                 R.id.navigation_announcements -> {
-                    updateFragment(MapViewFragment.instance)
+                    updateFragment(RideFragment.instance)
                 }
             }
             menuItem = item
