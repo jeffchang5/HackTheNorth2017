@@ -37,16 +37,19 @@ class MHacksApplication : Application(){
                 .netComponent(netComponent)
                 .build()
 
+        setUberSDKConfig()
+
     }
 
     fun setUberSDKConfig() {
         val config = SessionConfiguration.Builder()
-                .setClientId("YOUR_CLIENT_ID") //This is necessary
+                .setClientId("x811lv0W3F2Yl-zZMX5fqt6Rmy02Oek3") //This is necessary
                 .setRedirectUri("YOUR_REDIRECT_URI") //This is necessary if you'll be using implicit grant
                 .setEnvironment(SessionConfiguration.Environment.SANDBOX) //Useful for testing your app in the sandbox environment
                 .setScopes(Arrays.asList(Scope.PROFILE, Scope.RIDE_WIDGETS)) //Your scopes for authentication here
                 .build()
-
+//Secret Key
+//        OZ0CRQcTH-u6mXIBfYfHgJim0IKBRriC0eL5PhpD
 //This is a convenience method and will set the default config to be used in other components without passing it directly.
         UberSdk.initialize(config)
     }
