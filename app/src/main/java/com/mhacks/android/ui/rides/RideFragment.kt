@@ -35,7 +35,6 @@ class RideFragment : BaseFragment() {
     override var LayoutResourceID: Int = R.layout.fragment_map
 
 
-
     fun getMockData(): ArrayList<Ride> {
         val rideList = ArrayList<Ride>()
         rideList.add(Ride(3, "Honda Accord", "2.01KM", getDrawable(R.drawable.logo)))
