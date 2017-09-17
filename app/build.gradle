@@ -123,8 +123,6 @@ tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile) {
     }
 }
 
-apply plugin: 'com.google.gms.google-services'
-
 repositories {
     mavenCentral()
 }
